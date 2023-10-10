@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  /* font-family: 'Cinzel'; */
+  /* background-color: #FDF5F7; */
+  background-color: #ECF5F4;
+}
+
+
+h1, header {
+  font-family: Cinzel;
+}
+
+body {
+  font-family: Lora
+}

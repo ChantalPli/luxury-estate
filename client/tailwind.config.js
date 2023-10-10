@@ -13,7 +13,8 @@ export default {
         'font-four': 'Italiana',
         'font-five': '"Poiret One',
         'font-six': '"Pragati Narrow"',
-        'font-seven': 'Sacramento'
+        'font-seven': 'Sacramento',
+        'font-small': 'Lora'
       }
     }
   },
