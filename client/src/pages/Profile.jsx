@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { useRef, useState, useEffect } from 'react'
+import { userRef, useState, useEffect } from 'react'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart } from '../redux/user/userSlice'
 import { app } from '../firebase'
 import { Link } from 'react-router-dom'
 
 export default function Profile () {
-  const fileRef = useRef(null)
+  const fileRef = userRef(null)
   const { currentUser, loading, error } = useSelector((state) => state.user)
   const [file, setFile] = useState(undefined)
   const [filePercen, setFilePercen] = useState(0)
