@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore from 'swiper'
 import { Navigation } from 'swiper/modules'
+import { useSelector } from 'react-redux'
 import 'swiper/css/bundle'
 import {
   FaShare,
@@ -13,6 +14,7 @@ import {
   FaMapMarkerAlt,
   FaParking
 } from 'react-icons/fa'
+import Contact from '../components/Contact'
 
 export default function Listing () {
   SwiperCore.use([Navigation])
@@ -21,7 +23,9 @@ export default function Listing () {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [contact, setContact] = useState(false)
   const params = useParams()
+  const { currentUser } = useSelector((state) => state.user)
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -96,11 +100,11 @@ export default function Listing () {
               {listing.type === 'rent' && ' / month'}
             </p>
             <p className='flex items-center mt-6 gap-2 text-slate-600  text-sm'>
-              <FaMapMarkerAlt className='text-sky-800' />
+              <FaMapMarkerAlt className='text-teal-800' />
               {listing.address}
             </p>
             <div className='flex gap-4'>
-              <p className='bg-orange-800 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
+              <p className='bg-amber-700 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
                 {listing.type === 'rent' ? 'For Rent' : 'For Sale'}
               </p>
               {listing.offer && (
@@ -109,21 +113,21 @@ export default function Listing () {
                 </p>
               )}
             </div>
-            <ul className=' text-sky-800 font-semibold text-sm flex items-center  flex-wrap gap-4 sm:gap-6'>
+            <ul className=' text-teal-600 font-semibold text-sm flex items-center flex-wrap gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaBed className='text-lg text-sky-800' />
+                <FaBed className='text-lg text-teal-700' />
                 {listing.bedrooms > 1 ? `${listing.bedrooms} bedrooms ` : `${listing.bedrooms} bedroom`}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaBath className='text-lg text-sky-800' />
+                <FaBath className='text-lg text-teal-700' />
                 {listing.bathrooms > 1 ? `${listing.bathrooms} bathrooms ` : `${listing.bathrooms} bathroom`}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaParking className='text-lg text-sky-800' />
+                <FaParking className='text-lg text-teal-700' />
                 {listing.parking ? 'Parking spot' : 'No parking'}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaChair className='text-lg text-sky-800' />
+                <FaChair className='text-lg text-teal-700' />
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
 
@@ -133,6 +137,15 @@ export default function Listing () {
             </h4>
             <p className='text-slate-800'>{listing.description}</p>
 
+            {currentUser && listing.userRef !== currentUser._id && !contact && (
+              <button
+                onClick={() => setContact(true)}
+                className='bg-teal-800 text-white rounded-md uppercase hover:opacity-75 p-3'
+              >
+                Contact landlord
+              </button>
+            )}
+            {contact && <Contact listing={listing} />}
           </div>
 
         </>
