@@ -103,7 +103,7 @@ export default function Listing () {
               {listing.address}
             </p>
             <div className='flex gap-4'>
-              <p className='bg-amber-700 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
+              <p className='bg-amber-600 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
                 {listing.type === 'rent' ? 'For Rent' : 'For Sale'}
               </p>
               {listing.offer && (
@@ -112,21 +112,21 @@ export default function Listing () {
                 </p>
               )}
             </div>
-            <ul className=' text-teal-600 font-semibold text-sm flex items-center flex-wrap gap-4 sm:gap-6'>
+            <ul className=' text-stone-800 font-semibold text-sm flex items-center flex-wrap gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaBed className='text-lg text-teal-700' />
+                <FaBed className='text-lg text-stone-900' />
                 {listing.bedrooms > 1 ? `${listing.bedrooms} bedrooms ` : `${listing.bedrooms} bedroom`}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaBath className='text-lg text-teal-700' />
+                <FaBath className='text-lg text-stone-900' />
                 {listing.bathrooms > 1 ? `${listing.bathrooms} bathrooms ` : `${listing.bathrooms} bathroom`}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaParking className='text-lg text-teal-700' />
+                <FaParking className='text-lg text-stone-900' />
                 {listing.parking ? 'Parking spot' : 'No parking'}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap'>
-                <FaChair className='text-lg text-teal-700' />
+                <FaChair className='text-lg text-stone-900' />
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
 

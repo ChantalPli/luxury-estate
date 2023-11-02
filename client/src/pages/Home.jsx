@@ -81,8 +81,8 @@ export default function Home () {
                 backgroundPosition: 'center'
               }}
             >
-              <div className='flex flex-col gap-6 pt-80 pl-7 sm:pt-96 md:pt-[400px] sm:pl-20 max-w-6xl text-slate-50'>
-                <h1 className='font-bold text-3xl lg:text-6xl sm:text-4xl'>
+              <div className='flex flex-col gap-6 pt-96 pl-7 sm:pt-96 md:pt-[400px] sm:pl-20 max-w-6xl text-slate-50'>
+                <h1 className='font-bold text-4xl lg:text-6xl sm:text-4xl'>
                   The World's
                   <br />
                   Luxury Marketplace

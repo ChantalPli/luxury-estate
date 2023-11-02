@@ -5,7 +5,7 @@
 body {
   /* font-family: 'Cinzel'; */
   /* background-color: #FDF5F7; */
-  background-color: #ECF5F4;
+  background-color: #ffffff;
 }
 
 
@@ -13,6 +13,10 @@ h1, header {
   font-family: Cinzel;
 }
 
+h1,body {
+  font-family: Cinzel;
+}
+
 body {
-  font-family: Lora
+  font-family: Montserrat;
 }

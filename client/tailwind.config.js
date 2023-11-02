@@ -9,12 +9,13 @@ export default {
       fontFamily: {
         'font-one': 'Allura',
         'font-two': 'Cinzel',
-        'font-three': '"Cinzel Decorative"',
+        'font-three': 'Cinzel Decorative',
         'font-four': 'Italiana',
-        'font-five': '"Poiret One',
-        'font-six': '"Pragati Narrow"',
+        'font-five': 'Poiret One',
+        'font-six': 'Pragati Narrow',
         'font-seven': 'Sacramento',
-        'font-small': 'Lora'
+        'font-small': 'Lora',
+        'font-bd': 'Montserrat'
       }
     }
   },
